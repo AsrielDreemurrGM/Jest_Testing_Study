@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+import './styles/index.css'
 
 function App() {
+  const [tarefas, setTarefas] = useState([]);
+  const [tarefaTemp, setTarefaTemp] = useState();
+
+  function adicionarTarefa() {
+    setTarefas([tarefaTemp, ...tarefas]);
+    setTarefaTemp('');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='formWrapper'>
+        <input
+          className='input'
+          type='text'
+          placeholder='Digite uma tarefa aqui'
+          value={tarefaTemp}
+          onChange={evento => setTarefaTemp(evento.target.value)}
+        />
+        <button className='addButton' onClick={adicionarTarefa} type='button' >Adicionar</button>
+      </div>
+      <ul className='taskList'>
+        {tarefas.map(tarefa => (
+          <li className='taskList__Item' >{tarefa}</li>
+        ))}
+      </ul>
     </div>
   );
 }
