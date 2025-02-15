@@ -16,17 +16,25 @@ function App() {
       <div className='container'>
         <div className='formWrapper'>
           <input
+            data-testid="task-input"
             className='input'
             type='text'
             placeholder='Digite uma tarefa aqui'
             value={temporaryTask}
             onChange={evento => setTemporaryTask(evento.target.value)}
           />
-          <button className='addButton' onClick={addTask} type='button' >Adicionar</button>
+          <button
+            data-testid="add-task-button"
+            className='addButton'
+            onClick={addTask}
+            type='button'
+          >
+            Adicionar
+          </button>
         </div>
         <ul className='taskList'>
           {tasks.map(task => (
-            <li className='taskList__Item' >{task}</li>
+            <li key={task} className='taskList__Item' >{task}</li>
           ))}
         </ul>
       </div>
