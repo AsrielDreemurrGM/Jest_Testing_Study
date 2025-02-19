@@ -27,3 +27,4 @@ export function storeConfig(preloadedState?: PreloadedState<RootState>) {
 // Tipos globais para o estado da aplicação e store
 export type RootState = ReturnType<typeof rootReducer>
 export type AppStore = ReturnType<typeof storeConfig>
+export const store = storeConfig()
