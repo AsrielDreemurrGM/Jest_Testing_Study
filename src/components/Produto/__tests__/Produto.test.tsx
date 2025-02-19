@@ -18,11 +18,18 @@ describe('Testes para o componente Produto', () => {
     renderWithProvider(<Produto game={game} />)
     expect(screen.getByText('The Binding of Isaac')).toBeInTheDocument()
   })
-  test('Deve adicionar um jogo', () => {
+  test('Deve adicionar um jogo e mostrar alert se já foi adicionado', () => {
     const { store } = renderWithProvider(<Produto game={game} />)
     const button = screen.getByTestId('btn-add-product')
-    fireEvent.click(button)
 
+    const alertSpy = jest.spyOn(window, 'alert').mockImplementation()
+
+    fireEvent.click(button)
     expect(store.getState().carrinho.itens).toHaveLength(1)
+
+    fireEvent.click(button)
+    expect(alertSpy).toHaveBeenCalledWith('Item já adicionado')
+
+    alertSpy.mockRestore()
   })
 })
