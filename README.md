@@ -1,46 +1,51 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h1>Jest Testing Study</h1>
+<p>
+  Este README também está disponível em <a href="./README.pt-br.md">Português</a>.
+</p>
+<p>
+  A hands-on learning project designed to explore testing practices in React applications using <strong>Jest</strong>, <strong>Testing Library</strong>, and <strong>React Redux</strong>. This includes tests for components, user interactions, alerts, and Redux logic, while integrating tools like Mock Service Worker and code coverage reporting.
+</p>
+<h2>🧪 What’s Being Tested</h2>
+<ul>
+  <li>React component rendering and interaction;</li>
+  <li>Redux store and dispatched actions using <code>preloadedState</code>;</li>
+  <li>Form behavior and UI events using <code>fireEvent</code> and <code>screen</code>;</li>
+  <li>Alert messages and side effects triggered by components;</li>
+  <li>Mock Service Worker (MSW) for API simulations;</li>
+  <li>Custom render utilities for provider wrapping;</li>
+  <li>Unit tests for utility functions and string operations;</li>
+  <li>Test coverage reports.</li>
+</ul>
+<h2>⚙️ Technologies Used</h2>
+<ul>
+  <li>React</li>
+  <li>Redux Toolkit</li>
+  <li>TypeScript</li>
+  <li>Jest</li>
+  <li>React Testing Library</li>
+  <li>Mock Service Worker (MSW)</li>
+</ul>
+<h2>📂 Folder Structure</h2>
+<pre><code>
+src/
+├── components/       # Components with associated tests
+├── store/            # Redux setup with preloaded state
+├── utils/            # Utility functions and helpers
+├── tests/            # Jest test files and helpers
+└── App.tsx           # Main application entry
+</code></pre>
+<h2>📌 Commit Highlights</h2>
+<ul>
+  <li><strong>Render Tests</strong> – Created tests for header, product list, and cart items;</li>
+  <li><strong>Redux Store Refactor</strong> – Refactored store to support <code>preloadedState</code> and reusable render logic;</li>
+  <li><strong>Mock Service Worker</strong> – Integrated MSW to simulate backend API behavior during tests;</li>
+  <li><strong>Coverage Script</strong> – Added script to check project coverage;</li>
+  <li><strong>Alert Component Test</strong> – Added test to validate product alert logic.</li>
+</ul>
+<h2>📝 Notes</h2>
+<ul>
+  <li>This project is for study and practice purposes only;</li>
+  <li>Code is written with readability and test clarity in mind;</li>
+  <li>Jest is used with TypeScript and configured for React DOM testing;</li>
+  <li>Comments are added throughout to explain testing logic.</li>
+</ul>
